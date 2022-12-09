@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div *ngIf="postsCount == 0" class="alert alert-primary" role="alert">
+                Create Posts to view the count.
+            </div>
+            <div *ngIf="postsCount > 0" class="alert alert-primary" role="alert">
+                Posts Count: {{postsCount}}
+            </div>
+        </div>
+    </div>
+</div>

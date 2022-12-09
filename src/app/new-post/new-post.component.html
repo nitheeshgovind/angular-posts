@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-lg btn-primary" (click)="displayPostCreation()">
+                New Post
+            </button>
+        </div>
+    </div>
+    <div *ngIf="showPostCreation" class="row mt-4">
+        <div class="col">
+            <div class="container-fluid">
+                <label for="title" class="col-form-label">Title</label>
+                <input type="text" name="title" id="title" class="form-control" required #title="ngModel" [(ngModel)]="post.title">
+                <div *ngIf="title.errors">
+                    <span class="text-danger small" *ngIf="title.errors['required']">
+                        Title is required.
+                    </span>
+                </div>  
+                
+                <label for="content" class="col-form-label mt-2">Content</label>
+                <textarea name="content" id="content" class="form-control" required #content="ngModel" [(ngModel)]="post.content"></textarea>
+                <div *ngIf="content.errors">
+                    <span class="text-danger small" *ngIf="content.errors['required']">
+                        Content is required.
+                    </span>
+                </div>  
+
+                <button class="btn btn-lg btn-success mt-2" (click)="createPost()">Add Post</button>
+            </div>
+        </div>
+    </div>
+</div>
